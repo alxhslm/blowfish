@@ -12,7 +12,7 @@
 {{ $isOpen := or (eq $open true) (eq $open "true") }}
 
 <details
-  class="{{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }}"
+  class="group {{ if $isSeparated }}rounded-lg border border-neutral-200 dark:border-neutral-700 overflow-hidden{{ else }}border-none{{ end }}"
   data-accordion-item
   {{ if $isOpen }}open{{ end }}
 >
@@ -23,8 +23,8 @@
       {{ end }}
       <span>{{ $title }}</span>
     </span>
-    <span>
-      {{ partial "icon" "chevron-down" }}
+    <span class="accordion-chevron ms-auto flex h-5 w-5 items-center justify-center print:hidden">
+      {{ partial "icon.html" "chevron-down" }}
     </span>
   </summary>
   <div class="px-4 pb-4 text-neutral-700 dark:text-neutral-300">
